@@ -2,7 +2,7 @@
     "cSpell.words": [
         "numpy"
     ],
-    "python.pythonPath": "C:\\Users\\simon\\miniconda3\\python.exe",
+    "python.pythonPath": "C:\\Users\\simon\\.conda\\envs\\snakepong\\python.exe",
     "python.testing.pytestArgs": [
         "."
     ],
