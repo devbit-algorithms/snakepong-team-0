@@ -1,8 +1,13 @@
 import numpy as np
+from dllist import DoubleLinkedList
 
-matrix = np.arange(100).reshape(10, 10)
+# a = np.array([[i for i in range(n)] for j in range(m)])
 
-print(matrix)
+playingField = np.array([[i for i in range(10)] for j in range(10)])
+
+print(playingField)
+
+pongbar = DoubleLinkedList()
 
 # class Pong:
 #     def __init__(self, x, y):
