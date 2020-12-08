@@ -4,13 +4,19 @@ from dllist import DoubleLinkedList
 height = 10
 width = 10
 a = np.array([[i for i in range(height)] for j in range(width)])
-for i in range(height):
-    for j in range(width):
-        a[i][j] = ' '
+
+def clear_field(self):
+    for i in range(height):
+        for j in range(width):
+            a[i][j] = 0
         # if(j == 0):       
         #     a[i][j] = 0
         # if(i == 0):
         #     a[i][j] = 3
+
+def draw_symbols(self, x, y, symbol):
+    a[x][y] = symbol
+
 
 
 playingField = a
