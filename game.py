@@ -1,6 +1,11 @@
 import numpy as np
 from dllist import DoubleLinkedList
 
+from ball import Ball
+from field import Field
+from pong import Pong
+from snake import Snake
+
 height = 10
 width = 10
 a = np.array([[i for i in range(height)] for j in range(width)])
@@ -31,47 +36,3 @@ print(playingField)
 
 
 pongbar = DoubleLinkedList()
-
-# class Pong:
-#     def __init__(self, x, y):
-#         self.__x = x
-#         self.__y = y
-
-#     def getx(self):
-#         return self.__x
-
-#     def gety(self):
-#         return self.__x
-
-# class Snake:
-#     def __init__(self, x, y):
-#         self.__x = x
-#         self.__y = y
-    
-#     def getx(self):
-#         return self.__x
-
-#     def gety(self):
-#         return self.__x
-
-# class Ball:
-#     def __init__(self, x, y):
-#         self.__x = x
-#         self.__y = y
-
-#     def getx(self):
-#         return self.__x
-
-#     def gety(self):
-#         return self.__x
-
-# class Field:
-#     def __init__(self, width, height):
-#         self.__x = width
-#         self.__y = height
-    
-#     def getx(self):
-#         return self.__x
-
-#     def gety(self):
-#         return self.__x
