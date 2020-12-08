@@ -6,10 +6,11 @@ width = 10
 a = np.array([[i for i in range(height)] for j in range(width)])
 for i in range(height):
     for j in range(width):
-        if(j == 0):       
-            a[i][j] = 0
-        if(i == 0):
-            a[i][j] = 3
+        a[i][j] = ' '
+        # if(j == 0):       
+        #     a[i][j] = 0
+        # if(i == 0):
+        #     a[i][j] = 3
 
 
 playingField = a
