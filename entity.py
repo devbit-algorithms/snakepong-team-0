@@ -2,14 +2,14 @@ from abc import ABC, abstractmethod
 
 class Entity(ABC):
     def __init__(self, x, y):
-        self.__x = x
-        self.__y = y
+        self.x = x
+        self.y = y
     
-    def getx(self):
-        return self.__x
+    def get_x(self):
+        return self.x
 
-    def gety(self):
-        return self.__x
+    def get_y(self):
+        return self.y
     
     @abstractmethod
     def render(self, field):
