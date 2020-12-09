@@ -1,6 +1,7 @@
 import threading
 import os
 import time
+import curses
 import numpy as np
 from dllist import DoubleLinkedList
 
@@ -22,12 +23,14 @@ class Game:
         self.__game_loop()
 
     def __game_loop(self):
-        threading.Thread(target=self.__render, daemon=True).start()
-        self.__update()
+        threading.Thread(target=curses.wrapper(self.__render), daemon=True).start()
+        curses.wrapper(self.__update)
 
-    def __update(self):
-        while True:     # TODO game_over = False
+    def __update(self, window):
+        while True:
             # update game logic every x seconds
+
+            # TODO game_over = False
 
             # TODO process_keyboard_input()
 
@@ -40,20 +43,23 @@ class Game:
             # TODO update_ball()
             # TODO update_pong()
             # TODO update_snake()
-
-
-
+            
             time.sleep(1)
 
-    def __render(self):
+    def __render(self, window):
         while True:
-            os.system('clear')
+            window.scrollok(True)
+            window.clear()
             self.field.clear()
+
+            curses.use_default_colors()
+            for i in range(0, curses.COLORS): curses.init_pair(i, i, -1)
 
             for wall in self.walls:
                 wall.render(self.field)
 
-            self.field.output_to_terminal()
+            self.field.render(window)
+            window.refresh()
 
             time.sleep(1/self.fps)
 
