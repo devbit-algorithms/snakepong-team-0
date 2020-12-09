@@ -23,16 +23,3 @@ class Field:
                 print(self.screen[x][y], end='')
             print('')
         print('')
-                
-
-
-field = Field()
-
-Wall(0, 0).render(field)
-Wall(1, 0).render(field)
-Wall(2, 0).render(field)
-
-Wall(0, 1).render(field)
-Wall(0, 2).render(field)
-
-field.output_to_terminal()
