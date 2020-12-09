@@ -51,7 +51,10 @@ class Game:
             self.field.clear()
 
             curses.use_default_colors()
-            for i in range(0, curses.COLORS): curses.init_pair(i, i, -1)
+            try:
+                for i in range(0, curses.COLORS): curses.init_pair(i, i, -1)
+            except Exception:
+                pass
 
             for wall in self.walls:
                 wall.render(self.field)
