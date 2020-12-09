@@ -15,10 +15,13 @@ class Game:
     def __init__(self):
         self.field = Field()
         self.walls = []
+        self.pongs = []
+
 
         self.fps = 15
 
         self.__create_walls()
+        self.__create_pong()
 
         self.__game_loop()
 
@@ -61,6 +64,9 @@ class Game:
             for wall in self.walls:
                 wall.render(self.field)
 
+            for pong in self.pongs:
+                pong.render(self.field)
+
             self.field.render(window)
             window.refresh()
 
@@ -71,3 +77,9 @@ class Game:
             for x in range(self.field.get_width()):
                 if (x == 0 or x == 1 or y == 0 or x > self.field.get_width() - 3 or y > self.field.get_height() - 2):
                     self.walls.append(Wall(x, y))
+
+    def __create_pong(self):
+        for y in range(self.field.get_height()):
+            for x in range(self.field.get_width()):
+                if ((x == 4 or x == 5) and (y >= 13 and y <= 17) ):
+                    self.pongs.append(Pong(x, y))

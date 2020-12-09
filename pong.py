@@ -1,4 +1,4 @@
-from entity import Entity
+from entity import Entity, EntitySymbol
 from ball import Ball
 
 class Pong(Entity):
@@ -17,3 +17,6 @@ class Pong(Entity):
             self.move_down()
         if ball.get_y() < self.get_y():
             self.move_up()
+
+    def render(self, field):
+        field.draw_symbol(self.get_x(), self.get_y(), EntitySymbol(self, "\u0023", 3))
