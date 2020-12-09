@@ -23,12 +23,14 @@ class Game:
         self.__game_loop()
 
     def __game_loop(self):
-        threading.Thread(target=self.__render, daemon=True).start()
+        threading.Thread(target=curses.wrapper(self.__render), daemon=True).start()
         curses.wrapper(self.__update)
 
-    def __update(self):
-        while True:     # TODO game_over = False
+    def __update(self, window):
+        while True:
             # update game logic every x seconds
+
+            # TODO game_over = False
 
             # TODO process_keyboard_input()
             # TODO check_collision_walls()
@@ -39,9 +41,7 @@ class Game:
             # TODO update_ball()
             # TODO update_pong()
             # TODO update_snake()
-
-
-
+            
             time.sleep(1)
 
     def __render(self, window):
