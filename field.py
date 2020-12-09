@@ -32,3 +32,7 @@ class Field:
 
     def get_height(self):
         return self.height
+
+field = Field()
+field.screen.clear()
+
