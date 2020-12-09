@@ -26,8 +26,20 @@ class Game:
         self.__update()
 
     def __update(self):
-        while True:
+        while True:     # TODO game_over = False
             # update game logic every x seconds
+
+            # TODO process_keyboard_input()
+            # TODO check_collision_walls()
+            # TODO check collision_ball()
+            # TODO check_collision_snake()
+            # TODO check_collision_pong()
+
+            # TODO update_ball()
+            # TODO update_pong()
+            # TODO update_snake()
+
+
 
             time.sleep(1)
 
