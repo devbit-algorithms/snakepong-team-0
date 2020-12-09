@@ -23,3 +23,9 @@ class Field:
                 print(self.screen[x][y], end='')
             print('')
         print('')
+
+    def get_width(self):
+        return self.width
+
+    def get_height(self):
+        return self.height
