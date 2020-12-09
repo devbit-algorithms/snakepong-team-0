@@ -14,3 +14,18 @@ class Entity(ABC):
     @abstractmethod
     def render(self, field):
         pass
+
+class EntitySymbol:
+    def __init__(self, entity, char, color = 0):
+        self.entity = entity
+        self.char = char
+        self.color = color
+
+    def __str__(self):
+        return self.char
+
+    def get_entity(self):
+        return self.entity
+
+    def get_color(self):
+        return self.color

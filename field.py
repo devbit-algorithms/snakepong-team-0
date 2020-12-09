@@ -1,5 +1,7 @@
 import numpy as np
+import curses
 
+from entity import EntitySymbol
 from wall import Wall
 
 class Field:
@@ -12,17 +14,18 @@ class Field:
     def clear(self):
         for y in range(self.height):
             for x in range(self.width):
-                self.screen[x][y] = '  '
+                self.screen[x][y] = EntitySymbol(None, '  ')
     
     def draw_symbol(self, x, y, symbol):
         self.screen[x][y] = symbol
-    
-    def output_to_terminal(self):
-        for y in range(self.height):
-            for x in range(self.width):
-                print(self.screen[x][y], end='')
-            print('')
-        print('')
+
+    def render(self, window):
+        try:
+            for y in range(self.height):
+                for x in range(self.width):
+                    window.addstr(y, x * 2, str(self.screen[x][y]), curses.color_pair(self.screen[x][y].get_color()))
+        except Exception:
+            pass
 
     def get_width(self):
         return self.width
