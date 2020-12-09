@@ -64,5 +64,5 @@ class Game:
     def __create_walls(self):
         for y in range(self.field.get_height()):
             for x in range(self.field.get_width()):
-                if (x == 0 or y == 0 or x == self.field.get_width() - 1 or y == self.field.get_height() - 1):
+                if (x == 0 or x == 1 or y == 0 or x > self.field.get_width() - 3 or y > self.field.get_height() - 2):
                     self.walls.append(Wall(x, y))
