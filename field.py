@@ -5,7 +5,7 @@ from entity import EntitySymbol
 from wall import Wall
 
 class Field:
-    def __init__(self, width = 30, height = 30):
+    def __init__(self, width = 60, height = 30):
         self.width = width
         self.height = height
         self.screen = [[i for i in range(height)] for j in range(width)]
@@ -23,7 +23,7 @@ class Field:
         try:
             for y in range(self.height):
                 for x in range(self.width):
-                    window.addstr(y, x * 2, str(self.screen[x][y]), curses.color_pair(self.screen[x][y].get_color()))
+                    window.addstr(y, x, str(self.screen[x][y]), curses.color_pair(self.screen[x][y].get_color()))
         except Exception:
             pass
 
