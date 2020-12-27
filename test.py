@@ -30,3 +30,21 @@ def test_move_snake_right():
     snakeright = Snake(3,2)
     snake.move_down()
     assert snake == snakeright
+
+def test_move_down_pong():
+    pong = Pong(0,2)
+    pongdown = Pong(0,3)
+    pong.move_down()
+    assert pong == pongdown
+
+def test_move_up_pong():
+    pong = Pong(0,2)
+    pongup = Pong(0,1)
+    pong.move_up()
+    assert pong == pongup
+
+def test_update_pong():
+    ball = Ball(5,3)
+    pong = Pong(0,6)
+    pong.update_pong(ball)
+    assert pong.get_y == 5
