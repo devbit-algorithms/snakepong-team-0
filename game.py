@@ -2,7 +2,6 @@ import threading
 import os
 import time
 import curses
-import numpy as np
 from dllist import DoubleLinkedList
 
 from ball import Ball
@@ -28,10 +27,10 @@ class Game:
         self.__game_loop()
 
     def __game_loop(self):
-        threading.Thread(target=curses.wrapper(self.__render), daemon=True).start()
-        curses.wrapper(self.__update)
+        threading.Thread(target=self.__render, daemon=True).start()
+        self.__update()
 
-    def __update(self, window):
+    def __update(self):
         while True:
             # update game logic every x seconds
 
@@ -50,18 +49,21 @@ class Game:
             # TODO update_snake()
             
             time.sleep(1)
-
-    def __render(self, window):
+        
+    def __render(self):
+        stdscr = curses.initscr()
+        
+        curses.start_color()
+        curses.use_default_colors()
+        try:
+            for i in range(0, curses.COLORS): curses.init_pair(i, i, -1)
+        except Exception:
+            pass
+        
         while True:
-            window.scrollok(True)
-            window.clear()
+            stdscr.scrollok(True)
+            stdscr.clear()
             self.field.clear()
-
-            curses.use_default_colors()
-            try:
-                for i in range(0, curses.COLORS): curses.init_pair(i, i, -1)
-            except Exception:
-                pass
 
             for wall in self.walls:
                 wall.render(self.field)
@@ -72,8 +74,8 @@ class Game:
             for ball in self.balls:
                 ball.render(self.field)
 
-            self.field.render(window)
-            window.refresh()
+            self.field.render(stdscr)
+            stdscr.refresh()
 
             time.sleep(1/self.fps)
 
