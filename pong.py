@@ -11,11 +11,5 @@ class Pong(Entity):
     def move_down(self):
         self.y = self.y + 1
 
-    def update_pong(self, ball):
-        if ball.get_y() > self.get_y():
-            self.move_down()
-        if ball.get_y() < self.get_y():
-            self.move_up()
-
     def render(self, field):
         field.draw_symbol(self.get_x(), self.get_y(), EntitySymbol(self, "\u0023", 3))
