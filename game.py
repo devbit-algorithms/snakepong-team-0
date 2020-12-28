@@ -44,11 +44,11 @@ class Game:
             # TODO check_collision_snake()
             # TODO check_collision_pong()
 
-            # TODO update_ball()
+            self.__update_ball()
             self.__update_pong()
             # TODO update_snake()
             
-            time.sleep(1)
+            time.sleep(.150)
         
     def __render(self):
         stdscr = curses.initscr()
@@ -95,10 +95,13 @@ class Game:
             for y in range(self.field.get_height()):
                 for x in range(self.field.get_width()):
                     if ((x == 30) and (y == 15)):
-                        self.balls.append(Pong(x, y))
+                        self.balls.append(Ball(x, y))
 
     def __update_pong(self):
         up = self.pongs[2].get_y() >= self.balls[0].get_y()
         for pong in self.pongs:
             if up: pong.move_up()
             else: pong.move_down()
+    
+    def __update_ball(self):
+        self.balls[0].move_left()

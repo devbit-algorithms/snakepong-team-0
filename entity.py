@@ -10,6 +10,18 @@ class Entity(ABC):
 
     def get_y(self):
         return self.y
+
+    def move_up(self):
+        self.y = self.y - 1
+    
+    def move_down(self):
+        self.y = self.y + 1
+
+    def move_left(self):
+        self.x = self.x - 1
+    
+    def move_right(self):
+        self.x = self.x + 1
     
     @abstractmethod
     def render(self, field):
