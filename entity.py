@@ -18,10 +18,10 @@ class Entity(ABC):
         self.y = self.y + 1
 
     def move_left(self):
-        self.x = self.x - 1
+        self.x = self.x - 2
     
     def move_right(self):
-        self.x = self.x + 1
+        self.x = self.x + 2
     
     @abstractmethod
     def render(self, field):

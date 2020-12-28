@@ -24,6 +24,8 @@ class Game:
         self.__create_pong()
         self.__create_ball()
 
+        self.snake = Snake(40, 15)
+
         self.__game_loop()
 
     def __game_loop(self):
@@ -46,7 +48,7 @@ class Game:
 
             self.__update_ball()
             self.__update_pong()
-            # TODO update_snake()
+            self.snake.update()
             
             time.sleep(.150)
         
@@ -73,6 +75,8 @@ class Game:
 
             for ball in self.balls:
                 ball.render(self.field)
+
+            self.snake.render(self.field)
 
             self.field.render(stdscr)
             stdscr.refresh()
