@@ -48,3 +48,4 @@ def test_update_pong():
     pong = Pong(0,6)
     pong.update_pong(ball)
     assert pong.get_y == 5
+

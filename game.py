@@ -39,17 +39,18 @@ class Game:
 
             # TODO process_keyboard_input()
 
-            # TODO check_collision_walls()
-
             # TODO check collision_ball()
             # TODO check_collision_snake()
             # TODO check_collision_pong()
 
             # TODO update_ball()
-            # TODO update_pong()
+            update_pong()
             # TODO update_snake()
             
             time.sleep(1)
+
+    def check_collision_pong(self):
+        if pong.get_y() == wall.get_y()
 
     def __render(self, window):
         while True:
@@ -94,3 +95,5 @@ class Game:
                 for x in range(self.field.get_width()):
                     if ((x >= 30 and x <= 31) and (y >= 15 and y <= 16) ):
                         self.pongs.append(Pong(x, y))
+
+                        
