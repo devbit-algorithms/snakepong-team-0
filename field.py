@@ -1,4 +1,3 @@
-import numpy as np
 import curses
 
 from entity import EntitySymbol
