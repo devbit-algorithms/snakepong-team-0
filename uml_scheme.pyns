@@ -1,0 +1,23 @@
+# PynSource Version 1.2
+{'type':'meta', 'info1':'Lorem ipsum dolor sit amet, consectetur adipiscing elit is latin. Comments are saved.'}
+{'type':'umlshape', 'id':'Ball', 'x':801, 'y':270, 'width':202, 'height':186, 'attrs': 'x|y', 'meths': '__init__|move_diagonal_left_down|move_diagonal_left_up|move_diagonal_right_down|move_diagonal_right_up|render'}
+{'type':'umlshape', 'id':'Entity', 'x':650, 'y':19, 'width':90, 'height':218, 'attrs': 'x|y', 'meths': '__init__|get_x|get_y|move_down|move_left|move_right|move_up|render'}
+{'type':'umlshape', 'id':'EntitySymbol', 'x':809, 'y':48, 'width':130, 'height':170, 'attrs': 'char|color|entity', 'meths': '__init__|__str__|get_color|get_entity'}
+{'type':'umlshape', 'id':'ABC', 'x':548, 'y':116, 'width':40, 'height':28, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'Field', 'x':1090, 'y':275, 'width':98, 'height':202, 'attrs': 'height|screen|width', 'meths': '__init__|clear|draw_symbol|get_height|get_width|render'}
+{'type':'umlshape', 'id':'Game', 'x':460, 'y':462, 'width':122, 'height':298, 'attrs': 'balls|field|fps|pongs|snake|walls', 'meths': '__create_ball|__create_pong|__create_walls|__game_loop|__init__|__render|__update|__update_ball|__update_pong'}
+{'type':'umlshape', 'id':'Wall', 'x':423, 'y':306, 'width':74, 'height':80, 'attrs': '', 'meths': '__init__|render'}
+{'type':'umlshape', 'id':'Pong', 'x':267, 'y':303, 'width':98, 'height':96, 'attrs': '', 'meths': '__init__|render|update_pong'}
+{'type':'umlshape', 'id':'Snake', 'x':653, 'y':282, 'width':82, 'height':122, 'attrs': 'direction', 'meths': '__init__|render|update'}
+{'type':'edge', 'id':'Ball_to_Entity', 'source':'Ball', 'target':'Entity', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Entity_to_ABC', 'source':'Entity', 'target':'ABC', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Entity_to_EntitySymbol', 'source':'Entity', 'target':'EntitySymbol', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'EntitySymbol_to_Field', 'source':'EntitySymbol', 'target':'Field', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Field_to_Game', 'source':'Field', 'target':'Game', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Wall_to_Game', 'source':'Wall', 'target':'Game', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Pong_to_Game', 'source':'Pong', 'target':'Game', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Ball_to_Game', 'source':'Ball', 'target':'Game', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Snake_to_Game', 'source':'Snake', 'target':'Game', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Pong_to_Entity', 'source':'Pong', 'target':'Entity', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Snake_to_Entity', 'source':'Snake', 'target':'Entity', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Wall_to_Entity', 'source':'Wall', 'target':'Entity', 'uml_edge_type': 'generalisation'}
